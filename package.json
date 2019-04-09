@@ -1,6 +1,6 @@
 {
   "name": "say-todo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Vanilla JavaScript To-do app",
   "main": "assets/app.js",
   "scripts": {

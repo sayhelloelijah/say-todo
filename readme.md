@@ -1,2 +1,2 @@
 # say-todo
-A small to-do app built with vanilla JavaScript, and no dependencies.
+A small to-do app built with Vanilla JavaScript, and no dependencies.
