@@ -1,0 +1,50 @@
+.todo {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    @at-root &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @at-root &-item {
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 0 8px lighten($grey, 15%);
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin: 10px 0;
+
+            @at-root &-svg {
+                width: 30px;
+                fill: lighten($grey, 30%);
+            }
+        }
+    }
+
+    @at-root &__add-task {
+        border: none;
+        border-radius: 100%;
+        bottom: 20px;
+        cursor: pointer;
+        height: 70px;
+        padding: 0;
+        position: absolute;
+        right: 20px;
+        width: 70px;
+
+        @at-root &-svg {
+            border-radius: 100%;
+            box-shadow: 0 0 10px lighten($grey, 15%);
+            fill: $primary-color;
+            transition: .2s all ease-in-out;
+            
+            &:hover {
+                fill: darken($primary-color, 10%);
+                transform: scale(.98);
+            }
+        }
+    }
+}

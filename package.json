@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/sayhelloelijah/say-todo/issues"
   },
-  "homepage": "https://github.com/sayhelloelijah/say-todo#readme"
+  "homepage": "https://github.com/sayhelloelijah/say-todo#readme",
+  "devDependencies": {
+    "@sayhelloelijah/sass-boilerplate": "^1.1.0",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
 }

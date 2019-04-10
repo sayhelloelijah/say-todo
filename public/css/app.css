@@ -1,0 +1,63 @@
+@import 'https://fonts.googleapis.com/css?family=Quicksand';
+* {
+  box-sizing: border-box; }
+
+body, html {
+  font-family: "Quicksand", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+.todo__input {
+  appearance: none;
+  background-color: rgba(113, 114, 113, 0.5);
+  border: none;
+  color: #717271;
+  font-size: 18px;
+  padding: 10px;
+  width: 90%; }
+
+.todo__header {
+  background-color: #00D7FF;
+  display: none;
+  padding: 10px;
+  width: 100%; }
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  padding: 20px; }
+  .todo__list {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .todo__list-item {
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #979897;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      margin: 10px 0; }
+      .todo__list-item-svg {
+        width: 30px;
+        fill: #bebebe; }
+  .todo__add-task {
+    border: none;
+    border-radius: 100%;
+    bottom: 20px;
+    cursor: pointer;
+    height: 70px;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    width: 70px; }
+    .todo__add-task-svg {
+      border-radius: 100%;
+      box-shadow: 0 0 10px #979897;
+      fill: #00D7FF;
+      transition: .2s all ease-in-out; }
+      .todo__add-task-svg:hover {
+        fill: #00accc;
+        transform: scale(0.98); }

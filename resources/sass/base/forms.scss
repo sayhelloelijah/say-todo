@@ -1,0 +1,14 @@
+// Setup all default form styles
+.todo__input {
+    appearance: none;
+    background: {
+        color: rgba($grey, .5);
+    }
+    border: none;
+    color: $grey;
+    font: {
+        size: 18px;
+    }
+    padding: 10px;
+    width: 90%;
+}
