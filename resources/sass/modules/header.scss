@@ -1,7 +1,26 @@
 // Header styles
 .todo__header {
-    background-color: $primary-color;
-    display: none;
     padding: 10px;
     width: 100%;
+}
+
+.todo__date {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @at-root &-mdy {
+        align-items: center;
+        display: flex;
+    }
+
+    @at-root &-my {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @at-root &-date {
+        font-size: 3em;
+        margin-right: 5px;
+    }
 }

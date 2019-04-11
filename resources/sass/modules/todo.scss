@@ -1,7 +1,10 @@
 .todo {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 0 20px;
+    max-width: 450px;
+    margin: 0 auto;
+    min-width: 350px;
 
     @at-root &__list {
         list-style: none;
@@ -16,10 +19,19 @@
             justify-content: space-between;
             padding: 20px;
             margin: 10px 0;
+            transition: all .2s linear;
 
             @at-root &-svg {
                 width: 30px;
                 fill: lighten($grey, 30%);
+            }
+
+            @at-root &--done {
+                box-shadow: 0 0 8px lighten($grey, 25%);
+                opacity: .8;
+                color: lighten($grey, 40%);
+                text-decoration: line-through;
+                transform: scale(.98);
             }
         }
     }
@@ -27,24 +39,85 @@
     @at-root &__add-task {
         border: none;
         border-radius: 100%;
-        bottom: 20px;
+        box-shadow: 0 0 10px lighten($grey, 15%);
+        bottom: 35px;
         cursor: pointer;
-        height: 70px;
+        height: 50px;
         padding: 0;
-        position: absolute;
+        position: fixed;
         right: 20px;
-        width: 70px;
+        transition: .2s all ease-in-out;
+        width: 50px;
+        
+        &:hover {
+            transform: scale(.95);
+
+            @at-root  & > .todo__add-task-svg {
+                fill: darken($primary-color, 10%);
+            }
+        }
 
         @at-root &-svg {
             border-radius: 100%;
-            box-shadow: 0 0 10px lighten($grey, 15%);
             fill: $primary-color;
-            transition: .2s all ease-in-out;
-            
-            &:hover {
-                fill: darken($primary-color, 10%);
-                transform: scale(.98);
+        }
+    }
+
+    @at-root &__dialog {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba($grey, .7);
+        padding: 40px;
+        top: 20%;
+        transition: visiblity 1s, opacity 2s linear;
+        visibility: visible;
+
+        &:not([open]) {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &::backdrop {
+            background-color: rgba($grey, .4);
+        }
+
+        @at-root &-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @at-root &-label {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        @at-root &-input {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba($grey, .5);
+            font-family: $primary-font;
+            padding: 15px 10px;
+
+            @at-root &:active, &:focus {
+                outline: 1px solid $primary-color;
             }
         }
+
+        @at-root &-cancel, &-confirm {
+            appearance: none;
+            border: none;
+            border-radius: 10px;
+            font-family: $primary-font;
+            padding: 10px 25px;
+        }
+
+        @at-root &-confirm {
+            @include buttonColors($green, $black);
+        }
+
+        @at-root &-cancel {
+            @include buttonColors($red, $white);
+        }
+
     }
 }

@@ -19,15 +19,37 @@ body, html {
   width: 90%; }
 
 .todo__header {
-  background-color: #00D7FF;
-  display: none;
   padding: 10px;
+  width: 100%; }
+
+.todo__date {
+  align-items: center;
+  display: flex;
+  justify-content: space-between; }
+  .todo__date-mdy {
+    align-items: center;
+    display: flex; }
+  .todo__date-my {
+    display: flex;
+    flex-direction: column; }
+  .todo__date-date {
+    font-size: 3em;
+    margin-right: 5px; }
+
+.todo__attribution {
+  color: #3e3f3e;
+  font-size: 10px;
+  padding-bottom: 5px;
+  text-align: center;
   width: 100%; }
 
 .todo {
   display: flex;
   flex-direction: column;
-  padding: 20px; }
+  padding: 0 20px;
+  max-width: 450px;
+  margin: 0 auto;
+  min-width: 350px; }
   .todo__list {
     list-style: none;
     margin: 0;
@@ -39,25 +61,72 @@ body, html {
       display: flex;
       justify-content: space-between;
       padding: 20px;
-      margin: 10px 0; }
+      margin: 10px 0;
+      transition: all .2s linear; }
       .todo__list-item-svg {
         width: 30px;
         fill: #bebebe; }
+      .todo__list-item--done {
+        box-shadow: 0 0 8px #b1b2b1;
+        opacity: .8;
+        color: #d7d8d7;
+        text-decoration: line-through;
+        transform: scale(0.98); }
   .todo__add-task {
     border: none;
     border-radius: 100%;
-    bottom: 20px;
+    box-shadow: 0 0 10px #979897;
+    bottom: 35px;
     cursor: pointer;
-    height: 70px;
+    height: 50px;
     padding: 0;
-    position: absolute;
+    position: fixed;
     right: 20px;
-    width: 70px; }
+    transition: .2s all ease-in-out;
+    width: 50px; }
+    .todo__add-task:hover {
+      transform: scale(0.95); }
+      .todo__add-task:hover > .todo__add-task-svg {
+        fill: #00accc; }
     .todo__add-task-svg {
       border-radius: 100%;
-      box-shadow: 0 0 10px #979897;
-      fill: #00D7FF;
-      transition: .2s all ease-in-out; }
-      .todo__add-task-svg:hover {
-        fill: #00accc;
-        transform: scale(0.98); }
+      fill: #00D7FF; }
+  .todo__dialog {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(113, 114, 113, 0.7);
+    padding: 40px;
+    top: 20%;
+    transition: visiblity 1s, opacity 2s linear;
+    visibility: visible; }
+    .todo__dialog:not([open]) {
+      opacity: 0;
+      visibility: hidden; }
+    .todo__dialog::backdrop {
+      background-color: rgba(113, 114, 113, 0.4); }
+    .todo__dialog-form {
+      display: flex;
+      flex-direction: column; }
+    .todo__dialog-label {
+      font-size: 20px;
+      margin-bottom: 5px; }
+    .todo__dialog-input {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(113, 114, 113, 0.5);
+      font-family: "Quicksand", sans-serif;
+      padding: 15px 10px; }
+      .todo__dialog-input:active, .todo__dialog-input:focus {
+        outline: 1px solid #00D7FF; }
+    .todo__dialog-cancel, .todo__dialog-confirm {
+      appearance: none;
+      border: none;
+      border-radius: 10px;
+      font-family: "Quicksand", sans-serif;
+      padding: 10px 25px; }
+    .todo__dialog-confirm {
+      background-color: #50f725;
+      color: #252525; }
+    .todo__dialog-cancel {
+      background-color: #f72550;
+      color: #EFEFEF; }
