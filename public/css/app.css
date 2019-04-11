@@ -127,7 +127,10 @@ body, html {
       background-color: rgba(113, 114, 113, 0.4); }
     .todo__dialog-form {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      max-width: 100%;
+      min-width: 300px;
+      width: 100%; }
     .todo__dialog-label {
       font-size: 20px;
       margin-bottom: 5px; }
@@ -139,15 +142,16 @@ body, html {
       padding: 15px 10px; }
       .todo__dialog-input:active, .todo__dialog-input:focus {
         outline: 1px solid #00D7FF; }
-    .todo__dialog-cancel, .todo__dialog-confirm {
+    .todo__dialog-menu {
+      padding: 0;
+      width: 100%; }
+    .todo__dialog-confirm {
+      background-color: #50f725;
+      color: #252525;
       appearance: none;
       border: none;
       border-radius: 10px;
+      display: block;
       font-family: "Quicksand", sans-serif;
-      padding: 10px 25px; }
-    .todo__dialog-confirm {
-      background-color: #50f725;
-      color: #252525; }
-    .todo__dialog-cancel {
-      background-color: #f72550;
-      color: #EFEFEF; }
+      padding: 10px 25px;
+      width: 100%; }

@@ -112,6 +112,9 @@
         @at-root &-form {
             display: flex;
             flex-direction: column;
+            max-width: 100%;
+            min-width: 300px;
+            width: 100%;
         }
 
         @at-root &-label {
@@ -131,20 +134,20 @@
             }
         }
 
-        @at-root &-cancel, &-confirm {
-            appearance: none;
-            border: none;
-            border-radius: 10px;
-            font-family: $primary-font;
-            padding: 10px 25px;
+        @at-root &-menu {
+            padding: 0;
+            width: 100%;
         }
 
         @at-root &-confirm {
             @include buttonColors($green, $black);
-        }
-
-        @at-root &-cancel {
-            @include buttonColors($red, $white);
+            appearance: none;
+            border: none;
+            border-radius: 10px;
+            display: block;
+            font-family: $primary-font;
+            padding: 10px 25px;
+            width: 100%;
         }
 
     }
