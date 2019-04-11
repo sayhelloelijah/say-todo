@@ -11,6 +11,22 @@
         margin: 0;
         padding: 0;
 
+        @at-root &--empty {
+            align-items: center;
+            background-color: rgba($black, .02);
+            border-radius: 10px;
+            color: lighten($grey, 40%);
+            display: flex;
+            justify-content: center;
+            height: 50vh;
+            margin-bottom: 20%;
+            
+            &:before {
+                content: 'Add a Task';
+                font-size: 2em;
+            }
+        }
+
         @at-root &-item {
             align-items: center;
             border-radius: 10px;
