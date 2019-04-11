@@ -49,7 +49,7 @@ body, html {
   padding: 0 20px;
   max-width: 450px;
   margin: 0 auto;
-  min-width: 350px; }
+  min-width: 300px; }
   .todo__list {
     list-style: none;
     margin: 0;
@@ -63,9 +63,14 @@ body, html {
       padding: 20px;
       margin: 10px 0;
       transition: all .2s linear; }
+      .todo__list-item:hover .todo__list-item-svg {
+        opacity: 1; }
       .todo__list-item-svg {
-        width: 30px;
-        fill: #bebebe; }
+        fill: #bebebe;
+        opacity: 0;
+        stroke: #f72550;
+        transition: opacity .2s linear;
+        width: 20px; }
       .todo__list-item--done {
         box-shadow: 0 0 8px #b1b2b1;
         opacity: .8;
