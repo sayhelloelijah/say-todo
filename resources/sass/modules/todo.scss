@@ -78,7 +78,7 @@
         width: 50px;
         
         &:hover {
-            transform: scale(.95);
+            transform: scale(1.2);
 
             @at-root  & > .todo__add-task-svg {
                 fill: darken($primary-color, 10%);

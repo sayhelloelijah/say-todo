@@ -106,7 +106,7 @@ body, html {
     transition: .2s all ease-in-out;
     width: 50px; }
     .todo__add-task:hover {
-      transform: scale(0.95); }
+      transform: scale(1.2); }
       .todo__add-task:hover > .todo__add-task-svg {
         fill: #00accc; }
     .todo__add-task-svg {
