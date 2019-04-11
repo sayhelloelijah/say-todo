@@ -23,7 +23,10 @@
             
             &:before {
                 content: 'Add a Task';
-                font-size: 2em;
+                font: {
+                    size: 2em;
+                    weight: 300;
+                }
             }
         }
 

@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Quicksand';
+@import 'https://fonts.googleapis.com/css?family=Quicksand:300,400,500';
 * {
   box-sizing: border-box; }
 
@@ -35,10 +35,13 @@ body, html {
   .todo__date-date {
     font-size: 3em;
     margin-right: 5px; }
+  .todo__date-month {
+    font-weight: 500; }
 
 .todo__attribution {
   color: #3e3f3e;
   font-size: 10px;
+  font-weight: 300;
   padding-bottom: 5px;
   text-align: center;
   width: 100%; }
@@ -65,7 +68,8 @@ body, html {
       margin-bottom: 20%; }
       .todo__list--empty:before {
         content: 'Add a Task';
-        font-size: 2em; }
+        font-size: 2em;
+        font-weight: 300; }
     .todo__list-item {
       align-items: center;
       border-radius: 10px;
