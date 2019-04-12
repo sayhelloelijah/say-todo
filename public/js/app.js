@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tasksList = document.querySelector('.todo__list');
     const taskButton = document.querySelector('.todo__add-task');
     const taskForm = document.querySelector('.todo__dialog-form');
+    const closeButton = document.querySelector('.todo__dialog-close');
     const deleteAllButton = document.querySelector('.todo__delete-all');
     const day = document.querySelector('.todo__date-day');
     const date = document.querySelector('.todo__date-date');
@@ -95,7 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
         }
     });
+    
+    function closeModal(e) {
+      if(!e.target.matches('.todo__dialog-close')) return;
+      dialog.close();
+    }
 
+    closeButton.addEventListener('click', closeModal);
     tasksList.addEventListener('click', toggleDone);
     tasksList.addEventListener('click', deleteTask);
     deleteAllButton.addEventListener('click', deleteAllTasks);

@@ -220,6 +220,17 @@ body, html {
       font-family: "Quicksand", sans-serif;
       padding: 10px 25px;
       width: 100%; }
+    .todo__dialog-close {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      border: none;
+      background-color: transparent;
+      color: #a4a5a4;
+      font-size: 36px;
+      position: absolute;
+      right: 10px;
+      top: 0; }
   .todo__delete-all {
     -ms-flex-item-align: end;
         align-self: flex-end;

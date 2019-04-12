@@ -155,6 +155,17 @@
             width: 100%;
         }
 
+        @at-root &-close {
+            appearance: none;
+            border: none;
+            background-color: transparent;
+            color: lighten($grey, 20%);
+            font-size: 36px;
+            position: absolute;
+            right: 10px;
+            top: 0;
+        }
+
     }
 
     @at-root &__delete-all {
