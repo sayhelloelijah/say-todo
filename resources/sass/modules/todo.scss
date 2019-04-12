@@ -160,6 +160,7 @@
     @at-root &__delete-all {
         align-self: flex-end;
         appearance: none;
+        background-color: $white;
         border: 1px solid $red;
         border-radius: 100px;
         color: $red;

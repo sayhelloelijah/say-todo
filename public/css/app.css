@@ -226,6 +226,7 @@ body, html {
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
+    background-color: #FFFFFF;
     border: 1px solid #f72550;
     border-radius: 100px;
     color: #f72550;
@@ -236,6 +237,6 @@ body, html {
     transition: all .5s ease; }
     .todo__delete-all:hover {
       background-color: #f72550;
-      color: #EFEFEF; }
+      color: #FFFFFF; }
     .todo__delete-all--hidden {
       visibility: hidden; }
