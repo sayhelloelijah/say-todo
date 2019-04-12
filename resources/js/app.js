@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskButton = document.querySelector('.todo__add-task');
     const taskForm = document.querySelector('.todo__dialog-form');
     const deleteAllButton = document.querySelector('.todo__delete-all');
+    const day = document.querySelector('.todo__date-day');
+    const date = document.querySelector('.todo__date-date');
+    const month = document.querySelector('.todo__date-month');
+    const year = document.querySelector('.todo__date-year');
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     function addTask(e) {
         e.preventDefault();
@@ -69,6 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
         location.reload();
     }
 
+    function setDate() {
+        let today = new Date();
+        date.innerText = today.getDate();
+        day.innerText = days[today.getDay()];
+        month.innerText = months[today.getMonth()];
+        year.innerText = today.getFullYear();
+    }
+
+    setDate();
     populateList(tasks, tasksList);
     taskButton.addEventListener('click', () => {
         dialog.showModal();
