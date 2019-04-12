@@ -104,19 +104,19 @@ body, html {
     box-shadow: 0 0 10px #979897;
     bottom: 35px;
     cursor: pointer;
-    height: 50px;
+    height: 60px;
     padding: 0;
     position: fixed;
     right: 20px;
     transition: .2s all ease-in-out;
-    width: 50px; }
+    width: 60px; }
     .todo__add-task:hover {
-      transform: scale(1.2); }
+      transform: scale(1.05); }
       .todo__add-task:hover > .todo__add-task-svg {
-        fill: #00accc; }
+        fill: #2a99f4; }
     .todo__add-task-svg {
       border-radius: 100%;
-      fill: #00D7FF; }
+      fill: #42A5F5; }
   .todo__dialog {
     border: none;
     border-radius: 10px;

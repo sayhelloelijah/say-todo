@@ -75,24 +75,24 @@
         box-shadow: 0 0 10px lighten($grey, 15%);
         bottom: 35px;
         cursor: pointer;
-        height: 50px;
+        height: 60px;
         padding: 0;
         position: fixed;
         right: 20px;
         transition: .2s all ease-in-out;
-        width: 50px;
+        width: 60px;
         
         &:hover {
-            transform: scale(1.2);
+            transform: scale(1.05);
 
             @at-root  & > .todo__add-task-svg {
-                fill: darken($primary-color, 10%);
+                fill: darken($blue, 5%);
             }
         }
 
         @at-root &-svg {
             border-radius: 100%;
-            fill: $primary-color;
+            fill: $blue;
         }
     }
 
