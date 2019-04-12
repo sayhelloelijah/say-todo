@@ -54,8 +54,11 @@ body, html {
   margin: 0 auto;
   min-width: 300px; }
   .todo__list {
+    display: flex;
+    flex-direction: column;
     list-style: none;
     margin: 0;
+    min-height: 295px;
     padding: 0; }
     .todo__list--empty {
       align-items: center;
@@ -80,9 +83,11 @@ body, html {
       margin: 10px 0;
       transition: all .2s linear; }
       .todo__list-item:hover .todo__list-item-svg {
+        display: block;
         opacity: 1; }
       .todo__list-item-svg {
         fill: #bebebe;
+        display: none;
         opacity: 0;
         stroke: #f72550;
         transition: opacity .2s linear;
@@ -155,3 +160,18 @@ body, html {
       font-family: "Quicksand", sans-serif;
       padding: 10px 25px;
       width: 100%; }
+  .todo__delete-all {
+    align-self: flex-end;
+    appearance: none;
+    border: 1px solid #f72550;
+    border-radius: 100px;
+    color: #f72550;
+    font-size: 12px;
+    padding: 5px 20px;
+    text-decoration: none;
+    transition: all .5s ease; }
+    .todo__delete-all:hover {
+      background-color: #f72550;
+      color: #EFEFEF; }
+    .todo__delete-all--hidden {
+      visibility: hidden; }

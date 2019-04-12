@@ -7,8 +7,11 @@
     min-width: 300px;
 
     @at-root &__list {
+        display: flex;
+        flex-direction: column;
         list-style: none;
         margin: 0;
+        min-height: 295px;
         padding: 0;
 
         @at-root &--empty {
@@ -42,12 +45,14 @@
 
             &:hover {
                 @at-root & .todo__list-item-svg {
+                    display: block;
                     opacity: 1;
                 }
             }
 
             @at-root &-svg {
                 fill: lighten($grey, 30%);
+                display: none;
                 opacity: 0;
                 stroke: $red;
                 transition: opacity .2s linear;
@@ -150,5 +155,28 @@
             width: 100%;
         }
 
+    }
+
+    @at-root &__delete-all {
+        align-self: flex-end;
+        appearance: none;
+        border: 1px solid $red;
+        border-radius: 100px;
+        color: $red;
+        font: {
+            size: 12px;
+        }
+        padding: 5px 20px;
+        text-decoration: none;
+        transition: all .5s ease;
+
+        @at-root &:hover {
+            background-color: $red;
+            color: $white;
+        }
+
+        @at-root &--hidden {
+            visibility: hidden;
+        }
     }
 }

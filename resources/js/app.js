@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tasksList = document.querySelector('.todo__list');
     const taskButton = document.querySelector('.todo__add-task');
     const taskForm = document.querySelector('.todo__dialog-form');
+    const deleteAllButton = document.querySelector('.todo__delete-all');
 
     function addTask(e) {
         e.preventDefault();
@@ -38,8 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function isEmpty() {
         if(tasksList.innerHTML === "") {
             tasksList.classList.add('todo__list--empty');
+            deleteAllButton.classList.add('todo__delete-all--hidden');
         } else {
             tasksList.classList.remove('todo__list--empty');
+            deleteAllButton.classList.remove('todo__delete-all--hidden');
         }
     }
 
@@ -52,13 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
         populateList(tasks, tasksList);
     }
 
-    function deleteItem(e) {
+    function deleteTask(e) {
         if(!e.target.matches('.todo__list-item-svg')) return;
         const el = e.target;
         const index = el.dataset.index;
         tasks.splice(index, 1);
         localStorage.setItem('tasks', JSON.stringify(tasks));
         populateList(tasks, tasksList);
+    }
+
+    function deleteAllTasks() {
+        localStorage.removeItem('tasks');
+        location.reload();
     }
 
     populateList(tasks, tasksList);
@@ -74,5 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tasksList.addEventListener('click', toggleDone);
-    tasksList.addEventListener('click', deleteItem);
+    tasksList.addEventListener('click', deleteTask);
+    deleteAllButton.addEventListener('click', deleteAllTasks);
 });
