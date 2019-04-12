@@ -1,0 +1,82 @@
+.todo {
+    @at-root &__dialog {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba($grey, .7);
+        padding: 40px;
+        top: 20%;
+        transition: visiblity 1s, opacity 2s linear;
+        visibility: visible;
+
+        &:not([open]) {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &::backdrop {
+            background-color: rgba($grey, .4);
+        }
+
+        @at-root &-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            min-width: 300px;
+            width: 100%;
+        }
+
+        @at-root &-label {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        @at-root &-input {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba($grey, .5);
+            font-family: $primary-font;
+            padding: 15px 10px;
+
+            @at-root &:active, &:focus {
+                outline: 1px solid $primary-color;
+            }
+        }
+
+        @at-root &-menu {
+            padding: 0;
+            width: 100%;
+        }
+
+        @at-root &-confirm {
+            @include button($blue, $white);
+            appearance: none;
+            border-radius: 10px;
+            display: block;
+            font-family: $primary-font;
+            padding: 10px 25px;
+            transition: all .4s ease;
+            width: 100%;
+
+            &:hover {
+                @include ghostButton($blue);
+            }
+        }
+
+        @at-root &-close {
+            appearance: none;
+            border: none;
+            background-color: transparent;
+            color: lighten($grey, 20%);
+            font-size: 36px;
+            position: absolute;
+            right: 10px;
+            top: 0;
+            transition: color .2s ease;
+
+            &:hover {
+                color: lighten($grey, 10%);
+            }
+        }
+
+    }
+}

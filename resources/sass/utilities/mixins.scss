@@ -1,5 +1,12 @@
 // Mixins
-@mixin buttonColors($background, $color) {
-    background-color: $background;
+@mixin ghostButton($color) {
+    background-color: $white;
+    border: 1px solid $color;
+    color: $color;
+}
+
+@mixin button($bgcolor, $color) {
+    background-color: $bgcolor;
+    border: 1px solid $color;
     color: $color;
 }

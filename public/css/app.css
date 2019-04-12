@@ -10,17 +10,6 @@ body, html {
   padding: 0;
   width: 100%; }
 
-.todo__input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: rgba(113, 114, 113, 0.5);
-  border: none;
-  color: #717271;
-  font-size: 18px;
-  padding: 10px;
-  width: 90%; }
-
 .todo__header {
   padding: 10px;
   width: 100%; }
@@ -165,82 +154,16 @@ body, html {
     .todo__add-task-svg {
       border-radius: 100%;
       fill: #42A5F5; }
-  .todo__dialog {
-    border: none;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 0 20px rgba(113, 114, 113, 0.7);
-            box-shadow: 0 0 20px rgba(113, 114, 113, 0.7);
-    padding: 40px;
-    top: 20%;
-    -webkit-transition: visiblity 1s, opacity 2s linear;
-    transition: visiblity 1s, opacity 2s linear;
-    visibility: visible; }
-    .todo__dialog:not([open]) {
-      opacity: 0;
-      visibility: hidden; }
-    .todo__dialog::-webkit-backdrop {
-      background-color: rgba(113, 114, 113, 0.4); }
-    .todo__dialog::backdrop {
-      background-color: rgba(113, 114, 113, 0.4); }
-    .todo__dialog-form {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      max-width: 100%;
-      min-width: 300px;
-      width: 100%; }
-    .todo__dialog-label {
-      font-size: 20px;
-      margin-bottom: 5px; }
-    .todo__dialog-input {
-      border: none;
-      border-radius: 10px;
-      -webkit-box-shadow: 0 0 10px rgba(113, 114, 113, 0.5);
-              box-shadow: 0 0 10px rgba(113, 114, 113, 0.5);
-      font-family: "Quicksand", sans-serif;
-      padding: 15px 10px; }
-      .todo__dialog-input:active, .todo__dialog-input:focus {
-        outline: 1px solid #00D7FF; }
-    .todo__dialog-menu {
-      padding: 0;
-      width: 100%; }
-    .todo__dialog-confirm {
-      background-color: #50f725;
-      color: #252525;
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
-      border: none;
-      border-radius: 10px;
-      display: block;
-      font-family: "Quicksand", sans-serif;
-      padding: 10px 25px;
-      width: 100%; }
-    .todo__dialog-close {
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
-      border: none;
-      background-color: transparent;
-      color: #a4a5a4;
-      font-size: 36px;
-      position: absolute;
-      right: 10px;
-      top: 0; }
   .todo__delete-all {
+    background-color: #FFFFFF;
+    border: 1px solid #f72550;
+    color: #f72550;
     -ms-flex-item-align: end;
         align-self: flex-end;
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
-    background-color: #FFFFFF;
-    border: 1px solid #f72550;
     border-radius: 100px;
-    color: #f72550;
     font-size: 12px;
     padding: 5px 20px;
     text-decoration: none;
@@ -248,6 +171,84 @@ body, html {
     transition: all .5s ease; }
     .todo__delete-all:hover {
       background-color: #f72550;
+      border: 1px solid #FFFFFF;
       color: #FFFFFF; }
     .todo__delete-all--hidden {
       visibility: hidden; }
+
+.todo__dialog {
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 20px rgba(113, 114, 113, 0.7);
+          box-shadow: 0 0 20px rgba(113, 114, 113, 0.7);
+  padding: 40px;
+  top: 20%;
+  -webkit-transition: visiblity 1s, opacity 2s linear;
+  transition: visiblity 1s, opacity 2s linear;
+  visibility: visible; }
+  .todo__dialog:not([open]) {
+    opacity: 0;
+    visibility: hidden; }
+  .todo__dialog::-webkit-backdrop {
+    background-color: rgba(113, 114, 113, 0.4); }
+  .todo__dialog::backdrop {
+    background-color: rgba(113, 114, 113, 0.4); }
+  .todo__dialog-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 100%;
+    min-width: 300px;
+    width: 100%; }
+  .todo__dialog-label {
+    font-size: 20px;
+    margin-bottom: 5px; }
+  .todo__dialog-input {
+    border: none;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px rgba(113, 114, 113, 0.5);
+            box-shadow: 0 0 10px rgba(113, 114, 113, 0.5);
+    font-family: "Quicksand", sans-serif;
+    padding: 15px 10px; }
+    .todo__dialog-input:active, .todo__dialog-input:focus {
+      outline: 1px solid #00D7FF; }
+  .todo__dialog-menu {
+    padding: 0;
+    width: 100%; }
+  .todo__dialog-confirm {
+    background-color: #42A5F5;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border-radius: 10px;
+    display: block;
+    font-family: "Quicksand", sans-serif;
+    padding: 10px 25px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    width: 100%; }
+    .todo__dialog-confirm:hover {
+      background-color: #FFFFFF;
+      border: 1px solid #42A5F5;
+      color: #42A5F5; }
+  .todo__dialog-close {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: none;
+    background-color: transparent;
+    color: #a4a5a4;
+    font-size: 36px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    -webkit-transition: color .2s ease;
+    transition: color .2s ease; }
+    .todo__dialog-close:hover {
+      color: #8a8c8a; }
