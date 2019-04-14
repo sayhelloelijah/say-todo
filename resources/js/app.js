@@ -66,14 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if(!e.target.matches('.todo__list-item-svg')) return;
         const el = e.target;
         const index = el.dataset.index;
-        tasks.splice(index, 1);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        populateList(tasks, tasksList);
+        if(window.confirm(`Are you sure you want to delete this task?`)) {
+            tasks.splice(index, 1);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            populateList(tasks, tasksList);
+        }
     }
 
     function deleteAllTasks() {
-        localStorage.removeItem('tasks');
-        location.reload();
+        if(window.confirm(`Are you sure you want to delete the list?`)) {
+            localStorage.removeItem('tasks');
+            location.reload();
+        }
     }
 
     function setDate() {
