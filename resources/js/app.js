@@ -73,16 +73,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = e.target;
         const index = el.dataset.index;
         if(window.confirm(`Are you sure you want to delete this task?`)) {
-            tasks.splice(index, 1);
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-            populateList(tasks, tasksList);
+            el.parentNode.classList.add('todo__list-item--deleting');
+
+            setTimeout(() => {
+                tasks.splice(index, 1);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                populateList(tasks, tasksList);
+            }, 450);
         }
     }
 
     function deleteAllTasks() {
         if(window.confirm(`Are you sure you want to delete the list?`)) {
-            localStorage.removeItem('tasks');
-            location.reload();
+            tasksList.querySelectorAll('.todo__list-item');
+            Array.from(tasksList.querySelectorAll('.todo__list-item')).forEach(task => {
+                task.classList.add('todo__list-item--deleting');
+            });
+
+            setTimeout(() => {
+                localStorage.removeItem('tasks');
+                location.reload();
+            }, 450);
         }
     }
 

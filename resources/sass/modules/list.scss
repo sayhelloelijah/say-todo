@@ -41,14 +41,7 @@
             justify-content: space-between;
             padding: 20px;
             margin: 10px 0;
-            transition: all .2s linear;
-
-            &:hover {
-                @at-root & .todo__list-item-svg {
-                    display: block;
-                    opacity: 1;
-                }
-            }
+            transition: all .4s linear;
 
             @at-root &-svg {
                 fill: lighten($grey, 30%);
@@ -65,6 +58,17 @@
                 color: lighten($grey, 40%);
                 text-decoration: line-through;
                 transform: scale(.98);
+
+                &:hover {
+                    @at-root & .todo__list-item-svg {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            @at-root &--deleting {
+                transform: scale(0, 0);
             }
         }
     }
